@@ -15,28 +15,28 @@ In short, open your terminal, and type the following commands:
 ### 2. Tensorflow GPU installation:
 **Conventional Approach:**
 
-    1. Install the recommended Nvidia-drivers for your system:
-    
-        sudo ubuntu-drivers autoinstall
-    
-    2. Restart your machine and check if graphic card is installed.
-    
-        sudo reboot
-        nvidia-smi
-    
-        Please Note the CUDA Version on Top Right. This is required to follow correct CUDA version.
-        
-    3. Download and Install CUDA Toolkit from [here](https://developer.nvidia.com/cuda-toolkit-archive).
-    4. Download the correspomding cuDNN for installedCUDA by signing up on [Nvidia](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse804-110).
-    5. Install cuDNN by extracting the contents of cuDNN into the Toolkit path installed in Step 3. There will be files that you have to replace in CUDA Toolkit Directory.
-    6. Check the path variables if CUDA_HOME is present and the toolkit paths are available.
-    7. Install Tensorflow. Tensorflow by default comes with GPU support,so no need to install tensorflow-gpu specifically. Run below in Terminal:
-    
-        sudo apt update
-        sudo apt install python3-pip
-        pip install tensorflow
-        
-    8. Check Tensorflow and Check GPU is detected by Tensorflow. Run below in Terminal:
+1. Install the recommended Nvidia-drivers for your system:
+
+   sudo ubuntu-drivers autoinstall
+
+2. Restart your machine and check if graphic card is installed.
+
+   sudo reboot
+   nvidia-smi
+
+   Please Note the CUDA Version on Top Right. This is required to follow correct CUDA version.
+
+3. Download and Install CUDA Toolkit from [here](https://developer.nvidia.com/cuda-toolkit-archive).
+4. Download the correspomding cuDNN for installedCUDA by signing up on [Nvidia](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse804-110).
+5. Install cuDNN by extracting the contents of cuDNN into the Toolkit path installed in Step 3. There will be files that you have to replace in CUDA Toolkit Directory.
+6. Check the path variables if CUDA_HOME is present and the toolkit paths are available.
+7. Install Tensorflow. Tensorflow by default comes with GPU support,so no need to install tensorflow-gpu specifically. Run below in Terminal:
+
+   sudo apt update
+   sudo apt install python3-pip
+   pip install tensorflow
+
+8. Check Tensorflow and Check GPU is detected by Tensorflow. Run below in Terminal:
     &nbsp;&nbsp;&nbsp;&nbsp;Go to python console using```python3``` and type the following.
     &nbsp;&nbsp;&nbsp;&nbsp;```import tensorflow as tf```
     &nbsp;&nbsp;&nbsp;&nbsp;```tf.config.list_physical_devices('GPU')```

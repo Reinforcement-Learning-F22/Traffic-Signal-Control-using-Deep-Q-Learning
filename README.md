@@ -21,10 +21,10 @@ In short, open your terminal, and type the following commands:
 sudo ubuntu-drivers autoinstall
 ```
 2. Restart your machine and check if graphic card is installed.
-```
-sudo reboot
-nvidia-smi
-```
+    ```
+    sudo reboot
+    nvidia-smi
+    ```
 Please Note the CUDA Version on Top Right. This is required to follow correct CUDA version.
 
 3. Download and Install CUDA Toolkit from [here](https://developer.nvidia.com/cuda-toolkit-archive).

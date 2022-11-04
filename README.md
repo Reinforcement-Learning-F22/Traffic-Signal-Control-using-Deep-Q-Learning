@@ -15,7 +15,8 @@ In short, open your terminal, and type the following commands:
 ### 2. Tensorflow GPU installation:
 **Conventional Approach:**
 1- Install the recommended Nvidia-drivers for your system:
-    &nbsp;&nbsp;&nbsp;&nbsp;```sudo ubuntu-drivers autoinstall  ```
+    &nbsp;&nbsp;&nbsp;&nbsp;```sudo ubuntu-drivers autoinstall```
+    
 2- Restart your machine and check if graphic card is installed.
     &nbsp;&nbsp;&nbsp;&nbsp;```sudo reboot```
     &nbsp;&nbsp;&nbsp;&nbsp;```nvidia-smi```

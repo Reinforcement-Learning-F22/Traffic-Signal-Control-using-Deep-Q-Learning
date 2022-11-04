@@ -16,8 +16,9 @@ In short, open your terminal, and type the following commands:
 **Conventional Approach:**
 
 1. Install the recommended Nvidia-drivers for your system:
-
-   sudo ubuntu-drivers autoinstall
+```
+sudo ubuntu-drivers autoinstall
+```
 
 2. Restart your machine and check if graphic card is installed.
 

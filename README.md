@@ -13,13 +13,13 @@ In short, open your terminal, and type the following commands:
     sudo apt-get install sumo sumo-tools sumo-doc
     
 ### 2. Tensorflow GPU installation:
+
 **Conventional Approach:**
 
 1. Install the recommended Nvidia-drivers for your system:
 ```
 sudo ubuntu-drivers autoinstall
 ```
-
 2. Restart your machine and check if graphic card is installed.
 ```
 sudo reboot
@@ -38,7 +38,7 @@ sudo apt install python3-pip
 pip install tensorflow
 ```
 8. Check Tensorflow and Check GPU is detected by Tensorflow. Run below in Terminal:
-Go to python console using```python3``` and type the following.
+Go to python console using ```python3``` and type the following.
 ```
 import tensorflow as tf
 tf.config.list_physical_devices('GPU')
@@ -49,6 +49,7 @@ I went through this approach for days and it turned out to be very hard because 
 So, better to dump pip and use conda instead.
 
 **Using Conda:**
+
 1- First remove the pre-installed CUDA and Nvidia drivers to avoid CUDA and cuDNN versions incompatibility by running the follwoing: 
 ```
 sudo apt-get --purge remove "*cublas*" "cuda*" "nsight*" "*nvidia*"
@@ -75,30 +76,38 @@ conda install tensorflow-gpu
 ```
 conda activiate tf_gpu
 ```
-Go to python console using```python``` and type the following.
+Go to python console using ```python``` and type the following.
 ```
 import tensorflow as tf
 tf.config.list_physical_devices('GPU')
 ```
-file:///home/willi/Downloads/2022-11-04_20-58.png![image](https://user-images.githubusercontent.com/90580636/200052029-8d836cd7-3a00-40a7-b2d5-689d9351e5f5.png)
+[image](https://user-images.githubusercontent.com/90580636/200052029-8d836cd7-3a00-40a7-b2d5-689d9351e5f5.png)
 
-Now everything should work properly ✅.
+Now everything should work properly ✔️.
 
 **Libraries Installation:**
 Create sumolib virtual environment:
-    &nbsp;&nbsp;&nbsp;&nbsp;```conda create -n sumolib```
-    &nbsp;&nbsp;&nbsp;&nbsp;```conda activate sumolib```
+```
+conda create -n sumolib
+conda activate sumolib
+```
 Install pip to sumo venv directory:
-    &nbsp;&nbsp;&nbsp;&nbsp;```conda install pip```
+```
+conda install pip
+```
 Find your anaconda directory, and find the actual sumolib env. It should be somewhere like /anaconda/envs/sumolib/ and 
 install new packages:
-    &nbsp;&nbsp;&nbsp;&nbsp;```pip install sumolib```
+```
+pip install sumolib
+```
 Activate Tensorflow_gpu and install the following libraries:
-    &nbsp;&nbsp;&nbsp;&nbsp;```conda activiate tf_gpu```
-    &nbsp;&nbsp;&nbsp;&nbsp;```pip install sumolib```
-    &nbsp;&nbsp;&nbsp;&nbsp;```pip install traci```
-    &nbsp;&nbsp;&nbsp;&nbsp;```pip install pydot```
-    &nbsp;&nbsp;&nbsp;&nbsp;```sudo apt install graphviz```
+```
+conda activiate tf_gpu
+pip install sumolib
+pip install traci
+pip install pydot
+sudo apt install graphviz
+```
 
 ## Code Structure
 

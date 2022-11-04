@@ -50,7 +50,7 @@ So, better to dump pip and use conda instead.
 
 **Using Conda:**
 
-1- First remove the pre-installed CUDA and Nvidia drivers to avoid CUDA and cuDNN versions incompatibility by running the follwoing: 
+1. First remove the pre-installed CUDA and Nvidia drivers to avoid CUDA and cuDNN versions incompatibility by running the follwoing: 
     ```
     sudo apt-get --purge remove "*cublas*" "cuda*" "nsight*" "*nvidia*"
     sudo apt-get purge nvidia*
@@ -58,21 +58,21 @@ So, better to dump pip and use conda instead.
     sudo apt-get autoclean
     sudo rm -rf /usr/local/cuda*
     ```
-2- Then reinstall he recommended Nvidia drivers for your machine.
+2. Then reinstall he recommended Nvidia drivers for your machine.
     ```
     sudo ubuntu-drivers autoinstall
     ```
-3- Download ([Anaconda](https://www.anaconda.com/distribution/#download-section)) and install it by running the following command in the terminal of download directory. 
+3. Download ([Anaconda](https://www.anaconda.com/distribution/#download-section)) and install it by running the following command in the terminal of download directory. 
     ```
     bash Anaconda3-2022.10-Linux-x86_64.sh
     ```
-4- Create an environment first named with ‘tf_gpu’ and install all the packages required by tensorflow-gpu including the cuda and cuDNN compatible verisons.
+4. Create an environment first named with ‘tf_gpu’ and install all the packages required by tensorflow-gpu including the cuda and cuDNN compatible verisons.
     ```
     conda create --name tf_gpu
     activate tf_gpu
     conda install tensorflow-gpu
     ```
-5- Testing your Tensorflow installation. Open the terminal and activiate the environment as follows.
+5. Testing your Tensorflow installation. Open the terminal and activiate the environment as follows.
     ```
     conda activiate tf_gpu
     ```
@@ -81,7 +81,7 @@ So, better to dump pip and use conda instead.
     import tensorflow as tf
     tf.config.list_physical_devices('GPU')
     ```
-[image](https://user-images.githubusercontent.com/90580636/200052029-8d836cd7-3a00-40a7-b2d5-689d9351e5f5.png)
+    ![image](https://user-images.githubusercontent.com/90580636/200053597-dbe4d851-19a0-4fd7-a5ea-b4c3291ab300.png)
 
 Now everything should work properly ✔️.
 

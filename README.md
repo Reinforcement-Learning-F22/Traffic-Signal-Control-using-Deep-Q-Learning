@@ -48,7 +48,7 @@ In short, open your terminal, and type the following commands:
 I went through this approach for days and it turned out to be very hard because of versions compatibility of CUDA, cuDNN, and Tensorflow-gpu. It is really a headache and there is a probability of 1% that this process will go right for you!
 So, better to dump pip and use conda instead.
 
-**Using Conda:**
+**Conda Approach:**
 
 1. First remove the pre-installed CUDA and Nvidia drivers to avoid CUDA and cuDNN versions incompatibility by running the follwoing: 
     ```

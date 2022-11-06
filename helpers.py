@@ -69,7 +69,6 @@ def Import_Test_Setup(configuration_file):
     config['modelForTesting'] = content['dir'].getint('modelForTesting') 
     return config
 
-
 def Set_Train_Dir(modelsPathName):
     """
     Create a path for the new model path and increment the path name based on the previously model paths created. 
@@ -101,3 +100,25 @@ def Set_Test_Dir(modelsPathName, model_N):
         return folderPath, plotPath
     else: 
         sys.exit('The model number specified does not exist in the models folder')
+
+def set_sumo(gui, sumocfgFileName, maxSteps):
+    """
+    Configure the parameters for SUMO
+    """
+    # It is necessery to import python modules from the $SUMO_HOME/tools directory
+    if 'SUMO_HOME' in os.environ:
+        tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
+        sys.path.append(tools)
+    else:
+        sys.exit("please declare environment variable 'SUMO_HOME'")
+
+    # settings for the visual mode    
+    if gui == False:
+        sumoBinary = checkBinary('sumo')
+    else:
+        sumoBinary = checkBinary('sumo-gui')
+ 
+    # to run sumo at simulation time
+    sumo_cmd = [sumoBinary, "-c", os.path.join('intersection', sumocfgFileName), "--no-step-log", "true", "--waiting-time-memory", str(maxSteps)]
+
+    return sumo_cmd

@@ -1,0 +1,92 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{tabularx}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\counterwithout{figure}{subsection}
+\usepackage[utf8x]{inputenc}
+\counterwithout{table}{section}
+% \usepackage{pdfpages}
+% \usepackage{hyperref}
+\hypersetup{pdfborder=0 0 0}
+
+% \hypersetup{
+%     colorlinks=true,
+%     linkcolor=blue,
+%     filecolor=magenta,   
+%     citecolor=blue,
+%     urlcolor=magenta,
+% }
+
+\begin{document}
+\def\refname{\textbf{References}}
+
+\title{Traffic Signal Control Adaptation using Deep Q-Learning with Experience Reply}
+
+\author{
+    
+    \IEEEauthorblockN{Walid Shaker}
+    \IEEEauthorblockA{\textit{Innopolis University}\\
+    Innopolis, Russia\\
+    w.shaker@innopolis.university}
+ 
+    \and
+    
+    \IEEEauthorblockN{Siba Issa}
+    \IEEEauthorblockA{\textit{Innopolis University}\\
+    Innopolis, Russia\\
+    s.issa@innopolis.ru}
+    
+}
+\maketitle
+\IEEEpeerreviewmaketitle
+
+
+\begin{abstract}
+This article is devoted to ...
+
+\textit{Index Terms}—..., ...., 
+\end{abstract}
+
+\section{Introduction}
+Traffic congestion is a natural result of the sudden increase in vehicles on the road, forcing drivers to idle in their vehicles, wasting time and fuel. However, one of the most important factors in traffic congestion management is traffic light timing. A common issue with traffic signal control rules is that they do not always work properly, causing vehicles to idle on the crossing road while no one passes them. We believe that applying Reinforcement learning principles to traffic light control policy will significantly improve it. Our main goal is to implement a learning algorithm that will allow traffic control devices to examine traffic patterns and behaviors at a specific intersection and improve traffic flow by adjusting signal time.We accomplish this through the use of the Q-Learning technique, where an intersection is aware of the presence of vehicles and their speed as they approach the intersection. This data enables the intersection to develop a set of state and action policies that enable traffic lights to decide in an optimal way based on their present state. Our work aims to reduce traffic congestion on roads around the world by increasing junctions' awareness of traffic presence and enabling them to take the necessary action to optimize traffic flow and reduce waiting times.
+
+
+
+\section{Literature Review}
+Traffic congestion has recently received a lot of attention from researchers due to its negative effects on the environment. And traffic signal timing control is a revolutionary idea in the field of reinforcement learning. Fixed-time traffic signal control is the practice of determining and offline optimizing traffic signal timing at a junction using historical traffic data (not real-time traffic demands). However, changes in traffic conditions may cause predetermined traffic light timing settings to become obsolete. Traffic congestion occurs as a result of fixed-time traffic signal control's inability to respond to dynamic and sporadic traffic needs \cite{gao2017adaptive}. Adaptive traffic signal control, on the other hand, which modifies traffic signal timing in response to current traffic demand, has been shown to be an effective method of reducing traffic congestion.
+
+When modeling the control problem as a Markov decision process, the authors of \cite{mannion2016experimental} proposed using the reinforcement learning method to control traffic signals adaptively. While the suggested adaptive traffic signal management algorithms by \cite{neely2003dynamic} are analogous to forcing water through a network of pipes using pressure gradients (the number of queued vehicles). All of these works make responsive traffic signal control decisions based on hand-crafted features such as average vehicle delay and vehicle queue length. But \cite{gao2017adaptive} proposed a deep reinforcement learning algorithm that automatically extracts all features (machine-crafted features) useful for adaptive traffic signal control from raw real-time traffic data and learns the optimal traffic signal control policy instead of using human-crafted features. Where deep convolutional neural networks are used in \cite{gao2017adaptive} to extract useful features from raw real-time traffic data (such as vehicle position, speed, and traffic signal state) and output the best traffic signal control decision. 
+
+Number of techniques are provided by \cite{bakker2010traffic} for multi-agent reinforcement learning that can be used to train effective urban traffic controllers, where they dealt with the partial observability of traffic states, took into account information about congestion from surrounding agents, and used coordination graphs to coordinate the actions of several agents.
+
+
+
+\section{System Modelling}
+Formulation \\
+Optimization problem / objective function \\
+Algorithm pesudo code\\
+Charts \\
+DQN (last lab, sarsa, video, etc) \\
+NN (ML examples, grid search)\\
+Experience/ memory replay \\
+
+\section{Results}
+Sumo simulation
+
+\section{Evaluation and Discussion}
+
+\section{conclusion}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{Bibliography}
+\end{document}
+
+
+
+
+
+

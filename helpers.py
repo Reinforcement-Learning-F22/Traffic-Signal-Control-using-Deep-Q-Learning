@@ -11,6 +11,7 @@ def Import_Train_Setup(configuration_file):
     content = configparser.ConfigParser()
     content.read(configuration_file)
     config = {}
+    
     # Simulation Parameters
     config['gui'] = content['simulation'].getboolean('gui')
     config['numEpisodes'] = content['simulation'].getint('numEpisodes')
@@ -38,9 +39,7 @@ def Import_Train_Setup(configuration_file):
     # Directories  
     config['modelsPathName'] = content['dir']['modelsPathName']
     config['sumocfgFileName'] = content['dir']['sumocfgFileName']
-    
     return config
-
 
 
 def Import_Test_Setup(configuration_file):
@@ -70,15 +69,35 @@ def Import_Test_Setup(configuration_file):
     config['modelForTesting'] = content['dir'].getint('modelForTesting') 
     return config
 
-def Test_Dir(modelsPathName, model_N):
+
+def Set_Train_Dir(modelsPathName):
     """
-    Returns the path of the model in which the model number has been provided as an argument 
+    Create a path for the new model path and increment the path name based on the previously model paths created. 
+    """
+    folderPath = os.path.join(os.getcwd(), modelsPathName, '')
+    os.makedirs(os.path.dirname(folderPath), exist_ok=True)
+
+    dir_content = os.listdir(folderPath)
+    if dir_content:
+        previous_versions = [int(name.split("_")[1]) for name in dir_content]
+        new_version = str(max(previous_versions) + 1)
+    else:
+        new_version = '1'
+
+    dataPath = os.path.join(folderPath, 'model_'+new_version, '')
+    os.makedirs(os.path.dirname(dataPath), exist_ok=True)
+    return dataPath 
+
+
+def Set_Test_Dir(modelsPathName, model_N):
+    """
+    Returns the path of the model in which the model number has been provided as an argument.
     """
     folderPath = os.path.join(os.getcwd(), modelsPathName, 'model_'+str(model_N), '')
 
     if os.path.isdir(folderPath):    
-        plot_path = os.path.join(folderPath, 'test', '')
-        os.makedirs(os.path.dirname(plot_path), exist_ok=True)
-        return folderPath, plot_path
+        plotPath = os.path.join(folderPath, 'test', '')
+        os.makedirs(os.path.dirname(plotPath), exist_ok=True)
+        return folderPath, plotPath
     else: 
         sys.exit('The model number specified does not exist in the models folder')

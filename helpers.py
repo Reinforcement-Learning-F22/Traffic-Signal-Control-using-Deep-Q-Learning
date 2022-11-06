@@ -105,7 +105,7 @@ def Set_Test_Dir(modelsPathName, model_N):
         sys.exit('The model number specified does not exist in the models folder')
 
 
-def traffic_route_generator(numCars, maxSteps, seed):
+def Traffic_Route_Generator(numCars, maxSteps, seed):
     """
     Generation of the route of every car for one episode
     """

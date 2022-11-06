@@ -1,7 +1,8 @@
 import configparser
 from sumolib import checkBinary
-# import os
-# import sys
+import numpy as np
+import math
+import random
 
 
 def Import_Train_Setup(configuration_file):
@@ -11,6 +12,7 @@ def Import_Train_Setup(configuration_file):
     content = configparser.ConfigParser()
     content.read(configuration_file)
     config = {}
+
     # Simulation Parameters
     config['gui'] = content['simulation'].getboolean('gui')
     config['numEpisodes'] = content['simulation'].getint('numEpisodes')
@@ -39,32 +41,4 @@ def Import_Train_Setup(configuration_file):
     config['modelsPathName'] = content['dir']['modelsPathName']
     config['sumocfgFileName'] = content['dir']['sumocfgFileName']
     
-    return config
-
-
-def Import_Test_Setup(configuration_file):
-
-    """
-    Import testing parameters from test setup configuration file. 
-    """
-    content = configparser.ConfigParser()
-    content.read(configuration_file)
-    config = {}
-
-    # Simulation Parameters
-    config['gui'] = content['simulation'].getboolean('gui')
-    config['maxSteps'] = content['simulation'].getint('maxSteps')
-    config['numCars'] = content['simulation'].getint('numCars')
-    config['episodeSeed'] = content['simulation'].getint('episodeSeed')
-    config['yellowDuration'] = content['simulation'].getint('yellowDuration')
-    config['greenDuration'] = content['simulation'].getint('greenDuration')
-    
-    # Agent Parameters 
-    config['numStates'] = content['agent'].getint('numStates')
-    config['numActions'] = content['agent'].getint('numActions')
-    
-    # Directories      
-    config['modelsPathName'] = content['dir']['modelsPathName']
-    config['sumocfgFileName'] = content['dir']['sumocfgFileName']
-    config['modelForTesting'] = content['dir'].getint('modelForTesting') 
     return config

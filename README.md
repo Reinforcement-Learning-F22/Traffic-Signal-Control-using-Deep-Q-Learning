@@ -81,7 +81,7 @@ So, better to dump pip and use conda instead.
     import tensorflow as tf
     tf.config.list_physical_devices('GPU')
     ```
-    ![image](https://user-images.githubusercontent.com/90580636/200053597-dbe4d851-19a0-4fd7-a5ea-b4c3291ab300.png)
+    ![image](https://user-images.githubusercontent.com/90580636/200055403-ad36db40-f9be-4cdd-8fdd-0ea0afa1535f.png)
 
 Now everything should work properly ✔️.
 

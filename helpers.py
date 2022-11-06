@@ -1,10 +1,14 @@
-import configparser
 from sumolib import checkBinary
-import os
-import sys
+import matplotlib.pyplot as plt
+import configparser
 import numpy as np
 import math
+import sys
+import os
 
+#############################################################################
+###########################    MODEL SETUP    ###############################
+#############################################################################
 
 def Import_Train_Setup(configuration_file):
     """
@@ -104,6 +108,31 @@ def Set_Test_Dir(modelsPathName, model_N):
     else: 
         sys.exit('The model number specified does not exist in the models folder')
 
+#############################################################################
+##########################    Simulation SETUP    ###########################
+#############################################################################
+
+def Sumo_Settings(gui, sumocfgFileName, maxSteps):
+    """
+    Configure the parameters for SUMO
+    """
+    # It is necessery to import python modules from the $SUMO_HOME/tools directory
+    if 'SUMO_HOME' in os.environ:
+        tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
+        sys.path.append(tools)
+    else:
+        sys.exit("please declare environment variable 'SUMO_HOME'")
+
+    # settings for the visual mode    
+    if gui == False:
+        sumoBinary = checkBinary('sumo')
+    else:
+        sumoBinary = checkBinary('sumo-gui')
+ 
+    # to run sumo at simulation time
+    CMD = [sumoBinary, "-c", os.path.join('intersection', sumocfgFileName), "--no-step-log", "true", "--waiting-time-memory", str(maxSteps)]
+    return CMD
+
 
 def Traffic_Route_Generator(numCars, maxSteps, seed):
     """
@@ -176,3 +205,27 @@ def Traffic_Route_Generator(numCars, maxSteps, seed):
                 print('    <vehicle id="S_E_%i" type="standard_car" route="S_E" depart="%s" departLane="random" departSpeed="10" />' % (car_counter, step), file=routes)
 
     print("</routes>", file=routes)
+
+
+def Save_and_Visualize(path, dpi, data, filename, xlabel, ylabel):
+    """
+    Plot the performance of the agent over the session and save the data to a txt file
+    """
+    minValue = min(data)
+    maxValue = max(data)
+
+    plt.rcParams.update({'font.size': 26})  
+
+    plt.plot(data)
+    plt.ylabel(ylabel)
+    plt.xlabel(xlabel)
+    plt.margins(0)
+    plt.ylim(minValue - 0.05 * abs(minValue), maxValue + 0.05 * abs(maxValue))
+    fig = plt.gcf()
+    fig.set_size_inches(20, 11.25)
+    fig.savefig(os.path.join(path, 'plot_'+filename+'.png'), dpi=dpi)
+    plt.close("all")
+
+    with open(os.path.join(path, 'plot_'+filename + '_data.txt'), "w") as file:
+        for value in data:
+            file.write("%s\n" % value)

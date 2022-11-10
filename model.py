@@ -73,6 +73,33 @@ class TrainModel:
         plot_model(self._model, to_file=os.path.join(path, 'model_structure.png'), show_shapes=True, show_layer_names=True)
 
 
+    # Memory
+    def add_sample(self, sample):
+        """
+        Adding a sample into the memory
+        """
+        self._samples.append(sample)
+        if self.size_now() > self._maxMemorySize:
+            self._samples.pop(0)  # if the length is greater than the size of memory, remove the oldest element
+
+    def get_samples(self, n):
+        """
+        Get n samples randomly from the memory
+        """
+        if self.size_now() < self._minMemorySize:
+            return []
+
+        if n > self.size_now():
+            return random.sample(self._samples, self.size_now())  # get all the samples
+        else:
+            return random.sample(self._samples, n)  # get "batch size" number of samples
+
+    def size_now(self):
+        """
+        Check how full the memory is
+        """
+        return len(self._samples)
+
 #############################################################################
 ###########################    TEST MODEL     ###############################
 #############################################################################

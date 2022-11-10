@@ -37,3 +37,24 @@ if __name__ == "__main__":
         config['trainingEpochs']
     )
     
+    episode = 0
+    timestamp_start = datetime.datetime.now()
+    
+    while episode < config['numEpisodes']:
+        print('\n----- Episode', str(episode+1), 'of', str(config['numEpisodes']))
+        epsilon = 1.0 - (episode / config['numEpisodes'])  # set the epsilon for this episode according  to epsilon-greedy policy
+        simulation_time, training_time = Simulation.run(episode, epsilon)  # run the simulation
+        print('Simulation time:', simulation_time, 's - Training time:', training_time, 's - Total:', round(simulation_time+training_time, 1), 's')
+        episode += 1
+
+    print("\n----- Start time:", timestamp_start)
+    print("----- End time:", datetime.datetime.now())
+    print("----- Session info saved at:", Path)
+
+    Model.save_model(Path)
+
+    copyfile(src='Training_Setup.ini', dst=os.path.join(Path, 'Training_Setup.ini'))
+
+    Save_and_Visualize(path=Path,dpi=96,data=Simulation.reward_store, filename='reward', xlabel='Episode', ylabel='Cumulative negative reward')
+    Save_and_Visualize(path=Path,dpi=96,data=Simulation.cumulative_wait_store, filename='delay', xlabel='Episode', ylabel='Cumulative delay (s)')
+    Save_and_Visualize(path=Path,dpi=96,data=Simulation.avg_queue_length_store, filename='queue', xlabel='Episode', ylabel='Average queue length (vehicles)')

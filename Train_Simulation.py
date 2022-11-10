@@ -2,7 +2,7 @@ import traci
 import numpy as np
 import random
 import timeit
-from helpers import Traffic_Route_Generator
+from Helpers import Traffic_Route_Generator
 
 # phase codes based on environment.net.xml
 PHASE_NS_GREEN = 0  # action 0 code 00

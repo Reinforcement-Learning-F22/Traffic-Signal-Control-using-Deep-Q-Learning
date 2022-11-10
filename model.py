@@ -73,4 +73,33 @@ class TrainModel:
         plot_model(self._model, to_file=os.path.join(path, 'model_structure.png'), show_shapes=True, show_layer_names=True)
 
 
+#############################################################################
+###########################    TEST MODEL     ###############################
+#############################################################################
+
+class TestModel:
+    def __init__(self, input_dim, modelPath):
+        self._input_dim = input_dim
+        self._model = self.LoadMyModel(modelPath)
+
+
+    def LoadMyModel(self, modelFolderPath):
+        """
+        Load the model stored in the folder specified by the model number, if it exists
+        """
+        ModelFilePath = os.path.join(modelFolderPath, 'trained_model.h5')
+        
+        if os.path.isfile(ModelFilePath):
+            LoadedModel = load_model(ModelFilePath)
+            return LoadedModel
+        else:
+            sys.exit("Could not found the given MODEL NUMBER !!")
+
+
+    def predict_one(self, state):
+        """
+        This function return the predicted action values from the given state
+        """
+        state = np.reshape(state, [1, self._input_dim])
+        return self._model.predict(state)
 

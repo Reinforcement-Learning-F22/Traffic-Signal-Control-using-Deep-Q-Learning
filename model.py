@@ -72,6 +72,18 @@ class TrainModel:
         self._model.save(os.path.join(path, 'trained_model.h5'))
         plot_model(self._model, to_file=os.path.join(path, 'model_structure.png'), show_shapes=True, show_layer_names=True)
 
+    @property
+    def input_dim(self):
+        return self._inputDim
+
+    @property
+    def output_dim(self):
+        return self._outputDim
+
+    @property
+    def batch_size(self):
+        return self._batchSize
+
 
     # Memory
     def add_sample(self, sample):
@@ -129,4 +141,8 @@ class TestModel:
         """
         state = np.reshape(state, [1, self._input_dim])
         return self._model.predict(state)
+
+    @property
+    def input_dim(self):
+        return self._input_dim
 

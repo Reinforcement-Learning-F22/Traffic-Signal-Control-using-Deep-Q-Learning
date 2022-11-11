@@ -111,6 +111,17 @@ sudo apt install graphviz
 
 ## Code Structure
 
+**Train_Main.py** is the main file in our repo.
+
+The main file is training_main.py. On each iteration, it handles the main loop that starts an episode. It also saves the network weights as well as three plots: the negative reward plot, the cumulative wait time plot, and the average queues plot.
+
+The algorithm is divided into classes that handle various aspects of training.
+
+- Two different model classes are defined in the **model.py** file: one used only during training (**TrainModel**) and one used only during testing (**TestModel**). Each Model class defines everything about the deep neural network and includes some functions for training and predicting outputs.
+
+- The **Simulation** class is in charge of the simulation. The function *run*, in particular, enables the simulation of a single episode. Other functions are also used during run to interact with **SUMO**, such as retrieving the environment's state (*get_state*), setting the next green light phase (*set_green_phase*), or preprocessing the data to train the neural network (*replay*). **Train_Simulation.py** and **Test_Simulation.py** each contain a slightly different **Simulation** class. Which one is loaded depends on whether we are in the training or testing phase.
+
+
 ## Training and Testing Settings
 
 ## Model Training and Testing

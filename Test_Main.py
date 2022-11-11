@@ -33,3 +33,13 @@ if __name__ == "__main__":
     )
 
    
+    print('\n----- Test episode')
+    simulation_time = Simulation.run(config['episode_seed'])  # run the simulation
+    print('Simulation time:', simulation_time, 's')
+
+    print("----- Testing info saved at:", plot_path)
+
+    copyfile(src='testing_settings.ini', dst=os.path.join(plot_path, 'Testing_Setup.ini'))
+
+    Save_and_Visualize(path=Path,dpi=96, data=Simulation.reward_episode, filename='reward', xlabel='Action step', ylabel='Reward')
+    Save_and_Visualize(path=Path,dpi=96, data=Simulation.queue_length_episode, filename='queue', xlabel='Step', ylabel='Queue lenght (vehicles)')

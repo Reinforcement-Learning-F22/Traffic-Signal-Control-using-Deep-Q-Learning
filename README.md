@@ -122,7 +122,9 @@ The algorithm is divided into classes that handle various aspects of training.
 - The **Simulation** class is in charge of the simulation. The function *run*, in particular, enables the simulation of a single episode. Other functions are also used during run to interact with **SUMO**, such as retrieving the environment's state (*get_state*), setting the next green light phase (*set_green_phase*), or preprocessing the data to train the neural network (*replay*). **[Train_Simulation.py](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/blob/main/Train_Simulation.py)** and **[Test_Simulation.py](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/blob/main/Test_Simulation.py)** each contain a slightly different **Simulation** class. Which one is loaded depends on whether we are in the training or testing phase.
 
 - The **[Helpers.py](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/blob/main/Helpers.py)** file contains:
-    -- 
+    - functions related to directories, such as automatically creating new model (**Set_Train_Dir**) and loading existing models for testing (**Set_Test_Dir**).
+    - contains a (**Traffic_Route_Generator**) function for defining the route of each vehicle in a single episode The resulting file is called episode **routes.rou.xml** and is saved in the **[Sumo_environment](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/tree/main/Sumo_environment)** folder.
+    - (**Save_and_Visualize**) function for plotting data.
 
 The **[Sumo_environment](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/tree/main/Sumo_environment)** folder contains a file called **[environment.net.xml](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/blob/main/Sumo_environment/environment.net.xml)**, which defines the structure of the environment and was created with SUMO NetEdit. The other file, sumo config.sumocfg, is a linker between the environment and route files.
 

@@ -95,18 +95,19 @@ def Set_Train_Dir(modelsPathName):
     return dataPath 
 
 
-def Set_Test_Dir(modelsPathName, model_N):
+def Set_Test_Dir(modelsPathName, model_n):
     """
     Returns the path of the model in which the model number has been provided as an argument.
     """
-    folderPath = os.path.join(os.getcwd(), modelsPathName, 'model_'+str(model_N), '')
+    folderPath = os.path.join(os.getcwd(), modelsPathName, 'model_'+str(model_n), '')
 
     if os.path.isdir(folderPath):    
-        plotPath = os.path.join(folderPath, 'test', '')
-        os.makedirs(os.path.dirname(plotPath), exist_ok=True)
-        return folderPath, plotPath
+        plot_path = os.path.join(folderPath, 'test', '')
+        os.makedirs(os.path.dirname(plot_path), exist_ok=True)
+        return folderPath, plot_path
     else: 
         sys.exit('The model number specified does not exist in the models folder')
+        
 
 #############################################################################
 ##########################    Simulation SETUP    ###########################

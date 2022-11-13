@@ -39,5 +39,5 @@ if __name__ == "__main__":
 
     copyfile(src='Testing_Setup.ini', dst=os.path.join(plot_path, 'Testing_Setup.ini'))
 
-    Save_and_Visualize(path=Path,dpi=96, data=Simulation.reward_episode, filename='reward', xlabel='Action step', ylabel='Reward')
-    Save_and_Visualize(path=Path,dpi=96, data=Simulation.queue_length_episode, filename='queue', xlabel='Step', ylabel='Queue lenght (vehicles)')
+    Save_and_Visualize(path=plot_path,dpi=96, data=Simulation.reward_episode, filename='reward', xlabel='Action step', ylabel='Reward')
+    Save_and_Visualize(path=plot_path,dpi=96, data=Simulation.queue_length_episode, filename='queue', xlabel='Step', ylabel='Queue lenght (vehicles)')

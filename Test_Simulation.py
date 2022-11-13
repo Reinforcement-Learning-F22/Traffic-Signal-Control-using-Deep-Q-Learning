@@ -17,11 +17,12 @@ PHASE_EWL_YELLOW = 7
 
 
 class Simulation:
-    def __init__(self, Model, CMD, maxSteps, greenDuration, yellowDuration, numStates, numActions):
+    def __init__(self, Model, CMD, maxSteps, numCars, greenDuration, yellowDuration, numStates, numActions):
         self._Model = Model
         self._step = 0
         self._sumo_cmd = CMD
         self._maxSteps = maxSteps
+        self._numCars = numCars
         self._green_duration = greenDuration
         self._yellow_duration = yellowDuration
         self._num_states = numStates
@@ -37,7 +38,7 @@ class Simulation:
         start_time = timeit.default_timer()
 
         # first, generate the route file for this simulation and set up sumo
-        Traffic_Route_Generator(seed=episode)
+        Traffic_Route_Generator(self._numCars, self._maxSteps, seed=episode)
         traci.start(self._sumo_cmd)
         print("Simulating...")
 

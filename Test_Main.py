@@ -23,6 +23,7 @@ if __name__ == "__main__":
         Model,
         CMD,
         config['maxSteps'],
+        config['numCars'],
         config['greenDuration'],
         config['yellowDuration'],
         config['numStates'],

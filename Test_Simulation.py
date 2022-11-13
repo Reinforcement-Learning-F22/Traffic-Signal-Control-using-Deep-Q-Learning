@@ -17,9 +17,8 @@ PHASE_EWL_YELLOW = 7
 
 
 class Simulation:
-    def __init__(self, Model, TrafficGen, CMD, maxSteps, greenDuration, yellowDuration, numStates, numActions):
+    def __init__(self, Model, CMD, maxSteps, greenDuration, yellowDuration, numStates, numActions):
         self._Model = Model
-        self._TrafficGen = TrafficGen
         self._step = 0
         self._sumo_cmd = CMD
         self._maxSteps = maxSteps

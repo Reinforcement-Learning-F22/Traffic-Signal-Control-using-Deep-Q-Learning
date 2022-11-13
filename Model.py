@@ -117,9 +117,9 @@ class TrainModel:
 #############################################################################
 
 class TestModel:
-    def __init__(self, input_dim, modelPath):
+    def __init__(self, input_dim, model_path):
         self._input_dim = input_dim
-        self._model = self.LoadMyModel(modelPath)
+        self._model = self.LoadMyModel(model_path)
 
 
     def LoadMyModel(self, modelFolderPath):

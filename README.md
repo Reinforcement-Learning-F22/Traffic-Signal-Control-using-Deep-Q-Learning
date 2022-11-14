@@ -111,9 +111,7 @@ sudo apt install graphviz
 
 ## Code Structure
 
-**[Train_Main.py](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/blob/main/Train_Main.py)** is the main file in our repo.
-
-The main file is training_main.py. On each iteration, it handles the main loop that starts an episode. It also saves the network weights as well as three plots: the negative reward plot, the cumulative wait time plot, and the average queues plot.
+**[Train_Main.py](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/blob/main/Train_Main.py)** is the main file in our repo. The main file is training_main.py. On each iteration, it handles the main loop that starts an episode. It also saves the network weights as well as three plots: the negative reward plot, the cumulative wait time plot, and the average queues plot.
 
 The algorithm is divided into classes that handle various aspects of training.
 

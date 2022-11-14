@@ -150,6 +150,20 @@ The following are the training settings, which can be found in the file **[Train
 - **modelsPathName**: the name of the folder containing the model versions and thus the results When you want to group together some models, specify a recognizable name.
 - **sumocfgFileName**: the name of the.sumocfg file contained within the **[Sumo_environment](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/tree/main/Sumo_environment)** folder.
 
+The following are the testing settings, which can be found in the file **[Testing_Setup.ini](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/b episodeSeed lob/main/Testing_Setup.ini)** (Some of these must coincide with those utilized in the corresponding training):
+
+- **gui**: to enable or disable the SUMO interface while the simulation is running.
+- **maxSteps**: the length of each episode, with 1 step equaling 1 second (default duration in SUMO).
+- **numCars**: the number of cars generated in a single episode.
+- **episodeSeed**: the random number generator used to create cars (should not be a seed used during training).
+- **greenDuration**: each green phase's duration in seconds.
+- **yellowDuration**: each yellow phase's duration in seconds.
+- **numStates**: the size of the environment from the agent's point of view (a change here also requires algorithm changes).
+- **numActions**: the number of actions that are possible (a change here also requires algorithm changes).
+- **modelsPathName**: the name of the folder containing the model versions and thus the results When you want to group together some models, specify a recognizable name.
+- **sumocfgFileName**: the name of the.sumocfg file contained within the **[Sumo_environment](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/tree/main/Sumo_environment)** folder.
+- **modelForTesting**: the model version to load for the test.
+
 ## Model Training and Testing
 
 ## Deep Q-Learning Agent 

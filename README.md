@@ -129,6 +129,27 @@ The **[Sumo_environment](https://github.com/Reinforcement-Learning-F22/TrafficSi
 
 ## Training and Testing Settings
 
+The following are the training settings, which can be found in the file **[Training_Setup.ini](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/blob/main/Training_Setup.ini)**:
+
+- **gui**: to enable or disable the SUMO interface while the simulation is running.
+- **numEpisodes**: the number of episodes that will be produced.
+- **maxSteps**: the length of each episode, with 1 step equaling 1 second (default duration in SUMO).
+- **numCars**: the number of cars generated in a single episode.
+- **greenDuration**: each green phase's duration in seconds.
+- **yellowDuration**: each yellow phase's duration in seconds.
+- **numLayers**: the number of neural network hidden layers.
+- **layerWidth**: the number of neurons in the neural network per layer.
+- **batchSize**: the number of samples retrieved from memory for each training iteration.
+- **trainingEpochs**: the number of training iterations executed at the end of each episode.
+- **learningRate**: the neural network's defined learning rate.
+- **minMemorySize**: the minimum number of samples required in memory to enable neural network training.
+- **maxMemorySize**: the maximum number of samples that the memory can hold.
+- **numStates**: the size of the environment from the agent's point of view (a change here also requires algorithm changes).
+- **numActions**: the number of actions that are possible (a change here also requires algorithm changes).
+- **gamma**: the Bellman equation's gamma parameter.
+- **modelsPathName**: the name of the folder containing the model versions and thus the results When you want to group together some models, specify a recognizable name.
+- **sumocfgFileName**: the name of the.sumocfg file contained within the **[Sumo_environment](https://github.com/Reinforcement-Learning-F22/TrafficSignalControl/tree/main/Sumo_environment)** folder.
+
 ## Model Training and Testing
 
 ## Deep Q-Learning Agent 

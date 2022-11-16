@@ -1,4 +1,4 @@
-# Adaptive Traffic Signal Control using Deep Q-Learning Learning **(Title)**
+# Adaptive Traffic Signal Control using Deep Q-Learning Learning 
 In this project, we aim to implementing a learning algorithm that will allow traffic control devices to study traffic patterns/behaviors for a given intersection and optimize traffic flow by altering stoplight timing. With the help of Q-Learning technique, where an agent, based on the given state, selects an appropriate action for the intersection in order to maximize present and future rewards. 
 
 ## Environment Setup 
@@ -169,6 +169,7 @@ How to run ?
 Train (GUI=True)
 
 ## Deep Q-Learning Agent 
+**(Title)**
 
 ## Acknowledgement
 [Deep Q-Learning Agent for Traffic Signal Control](https://github.com/AndreaVidali/Deep-QLearning-Agent-for-Traffic-Signal-Control)

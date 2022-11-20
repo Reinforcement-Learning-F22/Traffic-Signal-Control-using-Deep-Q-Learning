@@ -166,11 +166,31 @@ The following are the testing settings, which can be found in the file **[Testin
 - **modelForTesting**: the model version to load for the test.
 
 ## Model Training and Testing
-How to run ?
-Train (GUI=True)
+How to train the model ?
+1- Clone the repo and navigate to the root folder.
+2- conda activiate tf_gpu
+3- python Train_Main.py 
 
-## Deep Q-Learning Agent 
-**(Title)**
+For testing:
+- python Test_Main.py 
+
+To see how the training process goes, you can set gui parameter to True in filw Training_Setup.ini. However it will make the training very slow. 
+
+## Deep Q-Learning Algorithm 
+The agent framework:
+![image](https://user-images.githubusercontent.com/90580636/202933072-53de2d7d-f217-47ce-8221-70e95c868a6d.png)
+
+Deep neural network architecture:
+![image](https://user-images.githubusercontent.com/90580636/202933105-ff23881f-4403-43d6-b3ac-3b86497b0d84.png)
+
+Experience replay (data collection task):
+![image](https://user-images.githubusercontent.com/90580636/202933167-923ba96b-0b37-4f8b-b85c-e568ecc812d4.png)
+
+Training: long queues and higher waiting time at the early episodes
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/90580636/202933475-74065547-75f2-456e-bf40-3d950af1edc5.gif)
+
+Testing: after the model is trained, the traffic flow is optimized and waiting time is reduced. 
+![ezgif com-gif-maker(1)](https://user-images.githubusercontent.com/90580636/202933628-8725558a-7eb3-478e-91dc-fcf6e217e183.gif)
 
 ## Acknowledgement
 [Deep Q-Learning Agent for Traffic Signal Control](https://github.com/AndreaVidali/Deep-QLearning-Agent-for-Traffic-Signal-Control)

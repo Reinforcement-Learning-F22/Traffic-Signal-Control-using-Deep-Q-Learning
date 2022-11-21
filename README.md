@@ -180,32 +180,44 @@ To see how the training process goes, you can set gui parameter to True in filw 
 **The agent framework:**
 <br />
 <p float="left">
-    <img src="https://user-images.githubusercontent.com/90580636/202933072-53de2d7d-f217-47ce-8221-70e95c868a6d.png" width="500" height="350" />
+    <img src="https://user-images.githubusercontent.com/90580636/202933072-53de2d7d-f217-47ce-8221-70e95c868a6d.png" width="550" height="350" />
 </p>
 <br />
 
 **Deep neural network architecture:**
 <br />
 <p float="left">
-    <img src="https://user-images.githubusercontent.com/90580636/202933105-ff23881f-4403-43d6-b3ac-3b86497b0d84.png" width="500" height="350" />
+    <img src="https://user-images.githubusercontent.com/90580636/202933105-ff23881f-4403-43d6-b3ac-3b86497b0d84.png" width="550" height="350" />
 </p>
 <br />
 
 **Experience replay (data collection task):**
 <br />
 <p float="left">
-    <img src="https://user-images.githubusercontent.com/90580636/202933167-923ba96b-0b37-4f8b-b85c-e568ecc812d4.png" width="500" height="350" />
+    <img src="https://user-images.githubusercontent.com/90580636/202933167-923ba96b-0b37-4f8b-b85c-e568ecc812d4.png" width="500" height="500" />
 </p>
 <br />
 
 **Training: long queues and higher waiting time at the early episodes.**
+<br />
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/90580636/202933475-74065547-75f2-456e-bf40-3d950af1edc5.gif)
 <br />
 **Testing: after the model is trained, the traffic flow is optimized and waiting time is reduced.**
+<br />
 ![ezgif com-gif-maker(1)](https://user-images.githubusercontent.com/90580636/202933628-8725558a-7eb3-478e-91dc-fcf6e217e183.gif)
 <br />
 
+## Results!
+[train_reward](https://user-images.githubusercontent.com/90580636/202934006-92320658-9d11-4031-8cdc-a5ec7e1bb01c.png)
+
+![train_queue](https://user-images.githubusercontent.com/90580636/202934014-cbae19f2-b417-4161-8c5f-aae36bbedc8d.png)
+
+![train_queue](https://user-images.githubusercontent.com/90580636/202934028-81285361-9d8b-42bc-9738-fd4e110c687b.png)
+
+![test_reward](https://user-images.githubusercontent.com/90580636/202934046-9aa7415e-d79b-4b56-a673-dd9a0b066b45.png)
+
 ## Acknowledgement
+
 [Deep Q-Learning Agent for Traffic Signal Control](https://github.com/AndreaVidali/Deep-QLearning-Agent-for-Traffic-Signal-Control)
 
 ## References

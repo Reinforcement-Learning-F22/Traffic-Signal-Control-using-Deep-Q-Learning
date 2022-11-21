@@ -177,19 +177,27 @@ For testing:
 To see how the training process goes, you can set gui parameter to True in filw Training_Setup.ini. However it will make the training very slow. 
 
 ## Deep Q-Learning Algorithm 
-The agent framework:
-![image](https://user-images.githubusercontent.com/90580636/202933072-53de2d7d-f217-47ce-8221-70e95c868a6d.png)
+**The agent framework:**
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/90580636/202933072-53de2d7d-f217-47ce-8221-70e95c868a6d.png" width="400" height="250" />
+</p>
 
-Deep neural network architecture:
-![image](https://user-images.githubusercontent.com/90580636/202933105-ff23881f-4403-43d6-b3ac-3b86497b0d84.png)
 
-Experience replay (data collection task):
-![image](https://user-images.githubusercontent.com/90580636/202933167-923ba96b-0b37-4f8b-b85c-e568ecc812d4.png)
+**Deep neural network architecture:**
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/90580636/202933105-ff23881f-4403-43d6-b3ac-3b86497b0d84.png" width="400" height="250" />
+</p>
 
-Training: long queues and higher waiting time at the early episodes
+
+**Experience replay (data collection task):**
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/90580636/202933167-923ba96b-0b37-4f8b-b85c-e568ecc812d4.png" width="400" height="250" />
+</p>
+
+**Training: long queues and higher waiting time at the early episodes.**
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/90580636/202933475-74065547-75f2-456e-bf40-3d950af1edc5.gif)
 
-Testing: after the model is trained, the traffic flow is optimized and waiting time is reduced. 
+**Testing: after the model is trained, the traffic flow is optimized and waiting time is reduced.**
 ![ezgif com-gif-maker(1)](https://user-images.githubusercontent.com/90580636/202933628-8725558a-7eb3-478e-91dc-fcf6e217e183.gif)
 
 ## Acknowledgement

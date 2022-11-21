@@ -167,9 +167,9 @@ The following are the testing settings, which can be found in the file **[Testin
 
 ## Model Training and Testing
 How to train the model ?
-1- Clone the repo and navigate to the root folder.
-2- conda activiate tf_gpu
-3- python Train_Main.py 
+1. Clone the repo and navigate to the root folder.
+2. conda activiate tf_gpu
+3. python Train_Main.py 
 
 For testing:
 - python Test_Main.py 

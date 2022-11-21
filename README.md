@@ -215,15 +215,15 @@ To see how the training process goes, you can set gui parameter to True in filw 
 ## Results
 <br />
 <p float="left">
-    <img src="https://user-images.githubusercontent.com/90580636/202934006-92320658-9d11-4031-8cdc-a5ec7e1bb01c.png" width="500" height="350" />    
-    <img src="https://user-images.githubusercontent.com/90580636/202934014-cbae19f2-b417-4161-8c5f-aae36bbedc8d.png" width="500" height="350" />
+    <img src="https://user-images.githubusercontent.com/90580636/202934006-92320658-9d11-4031-8cdc-a5ec7e1bb01c.png" width="350" height="250" />    
+    <img src="https://user-images.githubusercontent.com/90580636/202934014-cbae19f2-b417-4161-8c5f-aae36bbedc8d.png" width="350" height="250" />
 </p>
 <br />
 
 <br />
 <p float="left">
-    <img src="https://user-images.githubusercontent.com/90580636/202934028-81285361-9d8b-42bc-9738-fd4e110c687b.png" width="500" height="350" />    
-    <img src="https://user-images.githubusercontent.com/90580636/202934046-9aa7415e-d79b-4b56-a673-dd9a0b066b45.png" width="500" height="350" />
+    <img src="https://user-images.githubusercontent.com/90580636/202934028-81285361-9d8b-42bc-9738-fd4e110c687b.png" width="350" height="250" />    
+    <img src="https://user-images.githubusercontent.com/90580636/202934046-9aa7415e-d79b-4b56-a673-dd9a0b066b45.png" width="350" height="250" />
 </p>
 <br />
 

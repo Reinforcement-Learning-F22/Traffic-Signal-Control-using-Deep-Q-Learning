@@ -126,7 +126,7 @@ class Simulation:
         incoming_roads = ["E2TL", "N2TL", "W2TL", "S2TL"]
         car_list = traci.vehicle.getIDList()
         for car_id in car_list:
-            wait_time = traci.vehicle.getAccumulatedWaitingTime(car_id)
+            wait_time = traci.vehicle.getAccumulatedWaitingTime(car_id) # getWaitingTime
             road_id = traci.vehicle.getRoadID(car_id)  # get the road id where the car is located
             if road_id in incoming_roads:  # consider only the waiting times of cars in incoming roads
                 self._waiting_times[car_id] = wait_time

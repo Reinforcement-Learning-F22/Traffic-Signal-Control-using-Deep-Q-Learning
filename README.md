@@ -73,9 +73,9 @@ So, better to dump pip and use conda instead.
     activate tf_gpu
     conda install tensorflow-gpu
     ```
-5. Testing your Tensorflow installation. Open the terminal and activiate the environment as follows.
+5. Testing your Tensorflow installation. Open the terminal and activate the environment as follows.
     ```
-    conda activiate tf_gpu
+    conda activate tf_gpu
     ```
     Go to python console using ```python``` and type the following.
     ```
@@ -103,7 +103,7 @@ pip install sumolib
 ```
 Activate Tensorflow_gpu and install the following libraries:
 ```
-conda activiate tf_gpu
+conda activate tf_gpu
 pip install sumolib
 pip install traci
 pip install pydot
@@ -168,7 +168,7 @@ The following are the testing settings, which can be found in the file **[Testin
 ## Model Training and Testing
 How to train the model ?
 1. Clone the repo and navigate to the root folder.
-2. conda activiate tf_gpu
+2. conda activate tf_gpu
 3. python Train_Main.py 
 
 For testing:
